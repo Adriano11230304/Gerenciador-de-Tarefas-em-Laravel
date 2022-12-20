@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', "App\Http\Controllers\UsersController@index");
+Route::get('/', [UsersController::class, 'index']);
 Route::post('/users/signin', 'App\Http\Controllers\UsersController@AuthUsers');
 Route::get('/users/signup', 'App\Http\Controllers\UsersController@register');
 Route::post('/users/signup', 'App\Http\Controllers\UsersController@registerPost');
